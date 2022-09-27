@@ -28,11 +28,11 @@ Background gradient:
 #### Text
 
 - Very dark grayish blue: hsl(237, 12%, 33%)
-- Dark grayish blue: hsl(240, 6%, 50%)
+- Dark grayish blue: 
 
 #### Dividers
 
-- Light grayish blue: hsl(240, 5%, 91%)
+- Light grayish blue: 
 
 ## Typography
 
