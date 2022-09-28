@@ -1,5 +1,5 @@
 :root {
-    --test-blue: hsl(238, 29%, 16%);
+    --text-blue: hsl(238, 29%, 16%);
     --text-dkblue: hsl(240, 6%, 50%);
     --text-xdkblue: hsl(237, 12%, 33%);
     --text-red: hsl(14, 88%, 65%);
@@ -26,12 +26,18 @@ body {
         var(--gradient-violet), 
         var(--gradient-blue)
     );
+    color: var(--text-blue);
+}
+
+h1, h2, h3 {
+    margin-top: 0;
 }
 
 .card {
     background: #FFFFFF;
     border-radius: 2rem;
     max-width: 56rem;
+    padding: 2.875rem 1.5rem;
     background-image: url('images/bg-pattern-mobile.svg');
     background-repeat: no-repeat;
     background-position: center 0%;
@@ -62,6 +68,78 @@ body {
     padding-top: 7rem;
 }
 
+.accordion__item {
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--divider-blue);
+}
+.accordion__item h2 {
+    margin-bottom: 0;
+}
+
+.accordion__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: transparent;
+    margin-bottom: 1rem;
+    padding: 0.2rem;
+    font-size: 0.875rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    text-align: left;
+    
+}
+
+.accordion__question::after {
+    content: "";
+    display: block;
+    width: 0.625rem;
+    height: 1rem;
+    border: none;
+    background-image: url('/images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: transform 300ms ease-in-out;
+}
+
+.accordion__question:focus,
+.accordion__question:focus-visible {
+    border: none;
+    outline: dashed 1px rgba(0, 0, 0, 0.25);
+}
+
+.accordion__question.open {
+    font-weight: 700;
+}
+
+.accordion__question.open::after {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.accordion__collapse.collapse {
+    display: none;
+
+}
+
+.accordion__collapse.collapsing {
+
+}
+
+.accordion__collapse.open {
+    display: block;
+
+}
+
+/* DESKTOP TYPES */
 @media (min-width: 56em) {
 
     body {
@@ -72,7 +150,7 @@ body {
         position: relative;
         display: flex;
         margin: 0 auto;
-        padding-right: 2rem;
+        padding: 4.375rem 6.25rem 4.375rem 0;
         background-image: url('images/bg-pattern-desktop.svg');
         background-size: 45%;
         background-position: -13% center;
